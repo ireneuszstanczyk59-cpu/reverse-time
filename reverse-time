@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Reverse Time Clock</title>
+<style>
+  body {
+    background: black;
+    color: lime;
+    font-family: monospace;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 20%;
+  }
+</style>
+</head>
+<body>
+  <div id="clock"></div>
+  <script>
+    let now = new Date();
+    function reverseTime() {
+      now.setSeconds(now.getSeconds() - 1); // cofanie o sekundę
+      document.getElementById('clock').textContent =
+        now.toLocaleTimeString();
+    }
+    setInterval(reverseTime, 1000);
+  </script>
+</body>
+</html>
